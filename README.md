@@ -7,6 +7,17 @@
 ### Description
  Sequence allows you to sort tasks in sequential order to run. These tasks are run either on the next resumption cycle, or on-command!
 
+ You have 3 settings you can set:
+    *Autotick:*
+        Default: true
+        Will run a tick cycle upon adding objects to the queue
+    *ClearOnTick:*
+        Default: true
+        Will clear sequence after tick cycle has been completed
+    *Limit:*
+        Default: nil
+        Limits the amount of objects that can be in the sequence
+
  ### Potential Uses
  - Turn-base game to determine when a player will go.
  - Setting up a network package handler.
