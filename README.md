@@ -9,13 +9,13 @@
 
  You have 3 settings you can set:
 - *Autotick:*
-    - Default: true
+    - Default: `true`
     - Will run a tick cycle upon adding objects to the queue
 - *ClearOnTick:*
-    - Default: true
+    - Default: `true`
     - Will clear sequence after tick cycle has been completed
 - *Limit:*
-    - Default: nil
+    - Default: `nil`
     - Limits the amount of objects that can be in the sequence
 
  ### Potential Uses
