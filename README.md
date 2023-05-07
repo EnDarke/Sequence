@@ -24,7 +24,9 @@
  - Sending out notifications to players.
 
 ## Installation
-
+- 1. (Recommended) Download through wally!
+    - Inside your `wally.toml` file, add `Sequence = "endarke/sequence@1.0.0"`
+- 2. Download source code through releases page.
 
 ## Examples
 
