@@ -22,7 +22,7 @@ Output:
     It is now foobar's turn!
 ```
 
-![Carbon_Sequence_2](https://user-images.githubusercontent.com/60949506/236704265-dcd74966-e4b5-4994-b651-2e15463bf3b9.png)
+![Carbon_Sequence_2](https://user-images.githubusercontent.com/60949506/236704355-2fa7ea60-1b32-4cda-92c6-734282dfd4b9.png)
 ```
 Output:
     It is now foobar_1's turn!
