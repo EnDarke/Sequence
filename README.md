@@ -15,7 +15,7 @@
     - Default: true
     - Will clear sequence after tick cycle has been completed
 - *Limit:*
-    - Default:
+    - Default: nil
     - Limits the amount of objects that can be in the sequence
 
  ### Potential Uses
