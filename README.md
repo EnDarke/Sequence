@@ -22,14 +22,14 @@ Sequence.new<T>(callback: ({T}) -> nil) -> Sequence<T>
 ```
 Creates a new Sequence object.
 
---
+---
 ### Includes
 ```
 Sequence:Includes(object: T) -> SequenceTable<T>
 ```
 Adds an object to the Sequence table.
 
---
+---
 ### Excludes
 ```
 Sequence:Excludes(index: number) -> T
