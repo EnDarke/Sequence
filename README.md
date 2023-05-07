@@ -1,4 +1,5 @@
 # Sequence
+![GitHub all releases](https://img.shields.io/github/downloads/EnDarke/Sequence/total)
 ![GitHub contributors](https://img.shields.io/github/contributors/EnDarke/Sequence)
 ![GitHub last commit](https://img.shields.io/github/last-commit/EnDarke/Sequence)
 
@@ -13,16 +14,16 @@
  ## Functions
  ### new
 ```
-Sequence.new<T>(callback: ({T}) -> void) -> Sequence<T>
+Sequence.new<T>(callback: ({T}) -> nil) -> Sequence<T>
 ```
 Creates a new Sequence object.
------
+---
 ### Includes
 ```
 Sequence:Includes(object: T) -> SequenceTable<T>
 ```
 Adds an object to the Sequence table.
------
+---
 ### Excludes
 ```
 Sequence:Excludes(index: number) -> T
@@ -49,13 +50,13 @@ Sets the object at given index or first.
 ---
 ### ForceTick
 ```
-Sequence:ForceTick() -> void
+Sequence:ForceTick() -> nil
 ```
 Forcefully runs the tick cycle to flush all current Sequence tasks.
 ---
 ### Iterate
 ```
-Sequence:Iterate(stopAt: number) -> void
+Sequence:Iterate(stopAt: number) -> nil
 ```
 Like `:ForceTick()`, but only iterates over objects up to given index. Will run based on count of objects rather than count of index.
 ---
@@ -67,18 +68,18 @@ Gets the current Sequence table.
 ---
 ### SetCurrentLimit
 ```
-Sequence:SetCurrentLimit(amount: number) -> void
+Sequence:SetCurrentLimit(amount: number) -> nil
 ```
 Sets the sequence limit to amount given (nil for limit removal).
 ---
 ### Clean
 ```
-Sequence:Clean() -> void
+Sequence:Clean() -> nil
 ```
 Cleans up the Sequence table for a fresh start.
 ---
 ### Destroy
 ```
-Sequence:Destroy() -> void
+Sequence:Destroy() -> nil
 ```
 Used to clean and completely remove the Sequence object permanently.
