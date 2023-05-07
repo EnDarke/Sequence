@@ -15,8 +15,11 @@
 ## Installation
 
 
- ## Functions
- ### new
+## Example
+![Carbon_Sequence](https://user-images.githubusercontent.com/60949506/236703653-62d6384e-241f-4fe6-875f-4049de4993a8.png)
+
+## Functions
+### new
 ```
 Sequence.new<T>(callback: ({T}) -> nil) -> Sequence<T>
 ```
