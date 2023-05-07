@@ -73,9 +73,9 @@ function Sequence.new<T>(settings: {}, callback: callback) : Sequence<T> | nil
     local self: Sequence<T> = setmetatable({}, Sequence)
 
     -- Settings
-    self._autotick = settings.Autotick
+    self._autotick = settings.Autotick ~= nil and settings.Autotick or true
+    self._clearOnTick = settings.ClearOnTick ~= nil and settings.ClearOnTick or true
     self._limit = settings.Limit
-    self._clearOnTick = settings.ClearOnTick
 
     -- Properties
     self._sequence = {} :: Sequence<T>
@@ -93,12 +93,12 @@ function Sequence:Includes<T>(object: T, index: number) : SequenceTable<T>
         index = self:_findNextIndex()
     end
 
-    if ( self._limit and (index > self._limit) ) then
-        warn(":Includes | Cannot add more than " .. self._limit .. " objects")
-        return
-    end
-
     table.insert(self._sequence, index, object)
+
+    -- Sequence ceiling limiter
+    if ( self._limit and (#self._sequence > self._limit) ) then
+        self:Excludes(#self._sequence)
+    end
 
     -- Check if on autotick/run tick sequence
     if ( self._autotick ) then

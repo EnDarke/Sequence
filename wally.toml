@@ -3,7 +3,7 @@ name = "endarke/sequence"
 description = "A simple task sorting module, used to shorten the workload."
 license = "MIT"
 authors = ["EnDarke"]
-version = "0.2.0"
+version = "0.3.0"
 
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
