@@ -21,7 +21,6 @@
 Output:
     It is now foobar's turn!
 ```
-
 ![Carbon_Sequence_2](https://user-images.githubusercontent.com/60949506/236704355-2fa7ea60-1b32-4cda-92c6-734282dfd4b9.png)
 ```
 Output:
