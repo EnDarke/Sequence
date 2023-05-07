@@ -15,8 +15,11 @@
 ## Installation
 
 
-## Example
+## Examples
 ![Carbon_Sequence](https://user-images.githubusercontent.com/60949506/236703749-10d5fdff-3ef2-423e-bdfa-8a9a27f58bed.png)
+```
+Output: It is now foobar's turn!
+```
 
 ## Functions
 ### new
