@@ -30,6 +30,14 @@ Output:
     It is now foobar_2's turn!
 ```
 
+![Carbon_Sequence_3](https://user-images.githubusercontent.com/60949506/236704489-f388e1b1-06e7-4e75-8038-fb44e87b4ad1.png)
+```
+Output:
+    It is now foobar_1's turn!
+    It is now foobar_3's turn!
+    It is now foobar_4's turn!
+```
+
 ## Functions
 ### new
 ```
