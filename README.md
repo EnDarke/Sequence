@@ -1,4 +1,6 @@
 # Sequence
+![GitHub contributors](https://img.shields.io/github/contributors/EnDarke/Sequence)
+
 ### Description
  Sequence allows you to sort tasks in sequential order to run. These tasks are run either on the next resumption cycle, or on-command!
 
