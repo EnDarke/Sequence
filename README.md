@@ -9,11 +9,15 @@
 
  ## Functions
  ### new
-```Sequence.new<T>(callback: ({T}) -> void) -> Sequence<T>```
+```
+Sequence.new<T>(callback: ({T}) -> void) -> Sequence<T>
+```
 Creates a new Sequence object.
 ---
 ### Includes
-```Sequence:Includes(object: T) -> SequenceTable<T>```
+```
+Sequence:Includes(object: T) -> SequenceTable<T>
+```
 Adds an object to the Sequence table.
 ---
 ### Excludes
@@ -21,7 +25,9 @@ Adds an object to the Sequence table.
 Removes an object from the Sequence table at given index.
 ---
 ### ExcludeFromObject
-`Sequence:ExcludeFromObject(object: T) -> number`
+```
+Sequence:ExcludeFromObject(object: T) -> number
+```
 Removes an object from the Sequence table from given object.
 ---
 ### Get
