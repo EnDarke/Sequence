@@ -16,11 +16,14 @@
 
 
 ## Examples
+In this example, you can see that I have Autotick enabled. This way, it'll automatically tick on the next cycle.
 ![Carbon_Sequence](https://user-images.githubusercontent.com/60949506/236703749-10d5fdff-3ef2-423e-bdfa-8a9a27f58bed.png)
 ```
 Output:
     It is now foobar's turn!
 ```
+
+In this example, you can see that I have Autotick disabled, as well as ClearOnTick. ClearOnTick set to false will ensure that when hitting the tick cycle, previous object within the sequence don't get removed.
 ![Carbon_Sequence_2](https://user-images.githubusercontent.com/60949506/236704355-2fa7ea60-1b32-4cda-92c6-734282dfd4b9.png)
 ```
 Output:
@@ -29,12 +32,11 @@ Output:
     It is now foobar_2's turn!
 ```
 
-![Carbon_Sequence_3](https://user-images.githubusercontent.com/60949506/236704611-50de53ef-69d5-42a9-b8fd-75460ba2524e.png)
+![Carbon_Sequence_4](https://user-images.githubusercontent.com/60949506/236704902-5b23035f-fb58-4ddc-9697-a258085d6f28.png)
 ```
 Output:
     It is now foobar_1's turn!
-    It is now foobar_3's turn!
-    It is now foobar_4's turn!
+    It is now foobar_2's turn!
 ```
 
 ## Functions
