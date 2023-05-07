@@ -18,7 +18,16 @@
 ## Examples
 ![Carbon_Sequence](https://user-images.githubusercontent.com/60949506/236703749-10d5fdff-3ef2-423e-bdfa-8a9a27f58bed.png)
 ```
-Output: It is now foobar's turn!
+Output:
+    It is now foobar's turn!
+```
+
+![Carbon_Sequence_2](https://user-images.githubusercontent.com/60949506/236704265-dcd74966-e4b5-4994-b651-2e15463bf3b9.png)
+```
+Output:
+    It is now foobar_1's turn!
+    It is now foobar_1's turn!
+    It is now foobar_2's turn!
 ```
 
 ## Functions
