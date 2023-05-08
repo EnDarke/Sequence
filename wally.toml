@@ -3,12 +3,12 @@ name = "endarke/sequence"
 description = "A simple task sorting module, used to shorten the workload."
 license = "MIT"
 authors = ["EnDarke"]
-version = "0.4.0"
+version = "0.5.0"
 
 registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
+include = ["src", "src/**", "wally.toml", "default.project.json"]
 exclude = ["**"]
-include = ["src/init.lua", "wally.toml"]
 
 [dependencies]

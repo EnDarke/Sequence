@@ -25,7 +25,7 @@
 
 ## Installation
 - 1. (Recommended) Download through wally!
-    - Inside your `wally.toml` file, add `Sequence = "endarke/sequence@0.3.5"`
+    - Inside your `wally.toml` file, add `Sequence = "endarke/sequence@0.4.0"`
 - 2. Download source code through releases page.
 
 ## Examples
