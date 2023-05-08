@@ -1,7 +1,7 @@
 [package]
 name = "endarke/sequence"
 description = "A simple task sorting module, used to shorten the workload."
-license = "MIT"
+license = "MPL-2.0"
 authors = ["EnDarke"]
 version = "1.0.0"
 
