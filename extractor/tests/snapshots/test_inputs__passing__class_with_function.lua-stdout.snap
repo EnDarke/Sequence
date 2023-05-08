@@ -1,0 +1,57 @@
+---
+source: tests/test-inputs.rs
+expression: stdout
+
+---
+[
+  {
+    "functions": [
+      {
+        "name": "f",
+        "desc": "This is a description\nThis is alos adid seictopu",
+        "params": [
+          {
+            "name": "thename",
+            "desc": "the description",
+            "lua_type": "the type"
+          },
+          {
+            "name": "thenameredux",
+            "desc": "the description again",
+            "lua_type": "the type but twice"
+          }
+        ],
+        "returns": [
+          {
+            "desc": "AAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "lua_type": "string"
+          }
+        ],
+        "function_type": "static",
+        "since": "v1.0",
+        "deprecated": {
+          "version": "v1.2",
+          "desc": "This is no good."
+        },
+        "source": {
+          "line": 22,
+          "path": ""
+        }
+      }
+    ],
+    "properties": [],
+    "types": [],
+    "name": "aclass",
+    "desc": "This is a class",
+    "realm": [
+      "Plugin"
+    ],
+    "private": true,
+    "unreleased": true,
+    "source": {
+      "line": 9,
+      "path": ""
+    }
+  }
+]
+
