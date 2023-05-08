@@ -18,14 +18,14 @@
     - Default: `nil`
     - Limits the amount of objects that can be in the sequence
 
- ### Potential Uses
- - Turn-base game to determine when a player will go.
- - Setting up a network package handler.
- - Sending out notifications to players.
+### Potential Uses
+- Turn-base game to determine when a player will go.
+- Setting up a network package handler.
+- Sending out notifications to players.
 
 ## Installation
 - 1. (Recommended) Download through wally!
-    - Inside your `wally.toml` file, add `Sequence = "endarke/sequence@0.5.0"`
+        Inside your `wally.toml` file, add `Sequence = "endarke/sequence@0.5.0"`
 - 2. Download source code through releases page.
 
 ## Examples
