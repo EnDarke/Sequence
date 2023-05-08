@@ -1,4 +1,5 @@
 <div align = center>
+
 ![GitHub contributors](https://img.shields.io/github/contributors/EnDarke/Sequence)
 ![GitHub all releases](https://img.shields.io/github/downloads/EnDarke/Sequence/total)
 ![GitHub last commit](https://img.shields.io/github/last-commit/EnDarke/Sequence)
