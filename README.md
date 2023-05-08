@@ -14,5 +14,5 @@ Sequence allows developers to quickly sort their objects to run on code resumpti
 </div>
 
 <!---------------------------------------------------------------------------->
-[KBD]: https://kinqandi.github.io/Dumpster-API/
+[KBD]: https://endarke.github.io/Sequence/
 [Button Shield]: https://img.shields.io/badge/Shield_Buttons-37a779?style=for-the-badge
