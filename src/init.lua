@@ -11,39 +11,36 @@
 
 --[=[
     @class Sequence
+    @__index sequence
 
-        ```lua
-        .new<T>() : Sequence<T> | nil
-            -- Creates a new Sequence object
-        :Includes<T>(T) : SequenceTable<T>
-            -- Adds an object to the Sequence to be run on Sequence:ForceTick()
-        :Excludes<T>(number) : T
-            -- Removes an object from the Sequence at given index
-        :ExcludeFromObject<T>(T) : number
-            -- Removes an object from the Sequence based on object given
-        :Get<T>(number) : T
-            -- Gets the object at given index or first
-        :Set<T>(T, number) : SequenceTable<T>
-            -- Sets object at given index or first
-        :ForceTick() : void
-            -- Forcefully runs the function Sequence:_tick() if not currently ticking
-        :Iterate<T>(number) : void
-            -- Like :ForceTick(), but only iterates over objects up to index input.
-            -- This will run the number inputted regardless of sequence indexes.
-        :GetCurrentSequence<T>() : SequenceTable<T>
-            -- Gets the current sequence table
-        :SetCurrentLimit(number) : void
-            -- Sets the sequence limit on amount given or nil
-        :Clean() : void
-            -- Cleans up the Sequence for a fresh start
-        :Destroy() : void
-            -- Used to clean and completely remove Sequence object permanently
-        ```
+    Sequence allows you to sort tasks in sequential order to run. These tasks are run either on the next resumption cycle, or on-command!
+
+    Potential uses for this module would be a turn-base game to determine when a player will go, setting up a network package handler, or even just for sending out notifications to players!
+]=]
+
+--[=[
+    Commonly used term for a function that has no return value
+
+    @type void nil
+    @within Sequence
+]=]
+--[=[
+    Used to hold all given objects
+
+    @type SequenceTable<T> { T }
+    @within Sequence
+]=]
+--[=[
+    Object in which you run the `Sequence` code with
+
+    @type Sequence<T> metatable
+    @within Sequence
 ]=]
 
 -- Declaring Custom Types
 type void = nil
 type callback = () -> void
+type SequenceSettings = { Autotick: boolean, ClearOnTick: boolean, Limit: number }
 type SequenceTable<T> = { T }
 type Sequence<T> = typeof(setmetatable({})) & {
     new: <T>({}, callback) -> Sequence<T>;
@@ -65,15 +62,43 @@ local DEFAULT_AUTOTICK = true
 local DEFAULT_CLEARONTICK = true
 local DEFAULT_LIMIT = nil
 
+--[=[
+    @within Sequence
+    @prop Autotick boolean
+    @tag true by default
+    When enabled, it will automatically run a `tick cycle` on next resumption cycle
+]=]
+--[=[
+    @within Sequence
+    @prop ClearOnTick boolean
+    @tag true by default
+    When enabled, `SequenceTable<T>` is cleared after the `tick cycle` has completed
+]=]
+--[=[
+    @within Sequence
+    @prop Limit number
+    @tag nil by default
+    When set to a number, SequenceTable<T> won't allow any more objects than limit amount. If you `:Include()` an object that pushes `SequenceTable<T>` over the limit, it will remove any objects over said limit
+]=]
+
 -- Module Code
 local Sequence = {}
 Sequence.__index = Sequence
 
 --[=[
-    Creates a new Sequence object
-
+    @tag Sequence
     @param settings {}
     @param callback function
+
+    Creates a new Sequence object
+
+    ```lua
+    local MySequence.new({ Autotick = true, ClearOnTick = true, Limit = 10 }, function(sequenceTable)
+        for _, object in sequenceTable do
+            print("Object " .. object .. " is in the sequence!")
+        end
+    end)
+    ```
 ]=]
 
 function Sequence.new<T>(settings: {}, callback: callback) : Sequence<T>
@@ -86,7 +111,7 @@ function Sequence.new<T>(settings: {}, callback: callback) : Sequence<T>
     -- Settings
     self._autotick = if ( typeof(settings.Autotick) == "boolean" ) then settings.Autotick else DEFAULT_AUTOTICK
     self._clearOnTick = if ( typeof(settings.ClearOnTick) == "boolean" ) then settings.ClearOnTick else DEFAULT_CLEARONTICK
-    self._limit = if ( typeof(settings.Limit) == "number" ) then settings.Limit else DEFAULT_LIMIT
+    self.Limit = if ( typeof(settings.Limit) == "number" ) then settings.Limit else DEFAULT_LIMIT
 
     -- Properties
     self._sequence = {} :: Sequence<T>
@@ -103,7 +128,17 @@ end
     Adds an object to the Sequence to be run on Sequence:ForceTick()
 
     @param object T
-    @param index number
+    @param index number -- Places at end if nil
+
+    ```lua
+        local MySequence.new({ Autotick = true }, function(sequenceTable) end)
+
+        local currentSequence = MySequence:Includes("Hey there!")
+        print(newSequence)
+
+        <Output>
+        { "Hey there!" }
+    ```
 ]=]
 
 function Sequence:Includes<T>(object: T, index: number) : SequenceTable<T>
@@ -130,6 +165,17 @@ end
     Removes an object from the Sequence at given index
 
     @param index number
+
+    ```lua
+        local MySequence.new({ Autotick = true }, function(sequenceTable) end)
+
+        MySequence:Includes("Hey there!")
+        local removedObject = MySequence:Excludes(1)
+        print(removedObject)
+
+        <Output>
+        Hey there!
+    ```
 ]=]
 
 function Sequence:Excludes<T>(index: number) : T
@@ -151,6 +197,20 @@ end
     Removes an object from the Sequence at given index
 
     @param object T
+
+    ```lua
+        local MySequence.new({ Autotick = true }, function(sequenceTable) end)
+
+        MySequence:Includes("Hey there!")
+        print(MySequence:GetCurrentSequence())
+
+        MySequence:ExcludeFromObject("Hey there!")
+        print(MySequence:GetCurrentSequence())
+
+        <Output>
+        { "Hey there!" }
+        {}
+    ```
 ]=]
 
 function Sequence:ExcludeFromObject<T>(object: T) : void
@@ -173,6 +233,18 @@ end
     Used to find the object at index
 
     @param index number
+
+    ```lua
+        local MySequence.new({ Autotick = true }, function(sequenceTable) end)
+
+        MySequence:Includes("Hey there!")
+
+        local foundObject = MySequence:Get(1)
+        print(foundObject)
+
+        <Output>
+        Hey there!
+    ```
 ]=]
 
 function Sequence:Get<T>(index: number) : T
@@ -193,7 +265,20 @@ end
     Adds object to sequence, but replaces any current value at given index
 
     @param object T
-    @param index number
+    @param index number -- Sets object at index 1 if nil
+
+    ```lua
+        local MySequence.new({ Autotick = true }, function(sequenceTable)
+            print(sequenceTable)
+        end)
+
+        MySequence:Includes("Hey there!")
+
+        local currentSequence = MySequence:Set("Nice to meet you!", 1)
+
+        <Output>
+        { "Nice to meet you!" }
+    ```
 ]=]
 
 function Sequence:Set<T>(object: T, index: number) : SequenceTable<T>
@@ -215,7 +300,19 @@ function Sequence:Set<T>(object: T, index: number) : SequenceTable<T>
 end
 
 --[=[
-    Returns current status of the sequence
+    Returns current status of the `SequenceTable<T>`
+
+    ```lua
+        local MySequence.new({ Autotick = false }, function(sequenceTable) end)
+
+        MySequence:Set("Hey there!")
+
+        local currentSequence = MySequence:GetCurrentSequence()
+        print(currentSequence)
+
+        <Output>
+        { "Hey there!" }
+    ```
 ]=]
 
 function Sequence:GetCurrentSequence<T>() : SequenceTable<T>
@@ -223,19 +320,57 @@ function Sequence:GetCurrentSequence<T>() : SequenceTable<T>
 end
 
 --[=[
-    Changes the limit of objects that the sequence can hold
+    Changes the limit of objects that the `SequenceTable<T>` can hold
 
     @param amount number
+
+    ```lua
+        local MySequence.new({ Autotick = true, Limit = 1 }, function(sequenceTable)
+            print(sequenceTable)
+        end)
+
+        MySequence:Includes("Hey there!")
+        MySequence:Includes("Nice to meet you!", 1)
+
+        MySequence:SetCurrentLimit(3)
+
+        MySequence:Includes("I've been good!", 1)
+        MySequence:Includes("What about you?")
+        MySequence:Includes("Nothing much!", 2)
+
+        <Output>
+        { "I've been good!", "Nothing much!", "Nice to meet you!" }
+
+        -- Remember that :Includes() always places the object at the end.
+        -- But inputting a number pushes all that are ahead of it, up!
+    ```
 ]=]
 
 function Sequence:SetCurrentLimit(amount: number) : void
-    self._limit = amount
+    self.Limit = amount
 end
 
 --[=[
-    Runs a tick cycle based on first object and stopAt object
+    Runs a `tick cycle` over objects from first till `stopAt`
 
     @param stopAt number
+
+    ```lua
+        local MySequence.new({ Autotick = false }, function(sequenceTable)
+            print(sequenceTable)
+        end)
+
+        MySequence:Includes("Hey there!")
+        MySequence:Includes("Nice to meet you!")
+        MySequence:Includes("I've been good!")
+        MySequence:Includes("What about you?")
+        MySequence:Includes("Nothing much!")
+
+        MySequence:Iterate(4)
+
+        <Output>
+        { "Hey there!", "Nice to meet you!", "I've been good!", "What about you?" }
+    ```
 ]=]
 
 function Sequence:Iterate<T>(stopAt: number) : void
@@ -266,6 +401,29 @@ function Sequence:Iterate<T>(stopAt: number) : void
     -- Run tick over iteration objects
     self:_tick(iteration)
 end
+
+--[=[
+    Forcefully runs a `tick cycle` through every sequence object
+
+    ```lua
+        local MySequence.new({ Autotick = false }, function(sequenceTable)
+            print(sequenceTable)
+        end)
+
+        MySequence:Includes("Hey there!")
+        MySequence:Includes("Nice to meet you!")
+
+        task.wait(10)
+
+        MySequence:Includes("I've been good!")
+
+        MySequence:ForceTick()
+
+        <Output>
+        -- After ~10 seconds
+        { "Hey there!", "Nice to meet you!", "I've been good!" }
+    ```
+]=]
 
 function Sequence:ForceTick() : void
     if ( self._isTicking ) then return end
@@ -308,11 +466,34 @@ function Sequence:_findNextIndex() : number
     return #self._sequence + 1
 end
 
-function Sequence:Clean() : boolean | nil
+--[=[
+    Cleans up Sequence object and empties the `SequenceTable<T>`
+
+    ```lua
+        local MySequence = Sequence.new({ Autotick = false }, function(sequenceTable) end)
+
+        MySequence:Includes("Hey there!")
+        print(MySequence:GetCurrentSequence())
+
+        MySequence:Clean()
+
+        print(MySequence:GetCurrentSequence())
+
+        <Output>
+        { "Hey there!" }
+        {}
+    ```
+]=]
+
+function Sequence:Clean() : boolean
     if ( self._tickScheduled ) then return end
     table.clear(self._sequence)
     return true
 end
+
+--[=[
+    Destroys `Sequence` object permanently to never be restored
+]=]
 
 function Sequence:Destroy() : void
     self._tickScheduled = false

@@ -1,0 +1,9 @@
+gitRepoUrl = "https://github.com/EnDarke/Sequence"
+gitSourceBranch = "main"
+
+[home]
+enabled = true
+includeReadme = false
+
+[docusaurus]
+tagline = "Multi-purpose task sequencer"

@@ -1,0 +1,14 @@
+[package]
+name = "endarke/sequence"
+description = "A simple task sorting module, used to shorten the workload."
+license = "MIT"
+authors = ["EnDarke"]
+version = "1.0.0"
+
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+include = ["src", "src/**", "wally.toml", "default.project.json"]
+exclude = ["**"]
+
+[dependencies]
