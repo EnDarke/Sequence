@@ -8,8 +8,8 @@
 Potential uses for this module would be a turn-base game to determine when a player will go, setting up a network package handler, or even just for sending out notifications to players!"><meta data-rh="true" property="og:description" content="Sequence allows you to sort tasks in sequential order to run. These tasks are run either on the next resumption cycle, or on-command!
 
 Potential uses for this module would be a turn-base game to determine when a player will go, setting up a network package handler, or even just for sending out notifications to players!"><link data-rh="true" rel="canonical" href="https://EnDarke.github.io/Sequence/api/Sequence"><link data-rh="true" rel="alternate" href="https://EnDarke.github.io/Sequence/api/Sequence" hreflang="en"><link data-rh="true" rel="alternate" href="https://EnDarke.github.io/Sequence/api/Sequence" hreflang="x-default"><link rel="stylesheet" href="/Sequence/assets/css/styles.a5aeb1da.css">
-<link rel="preload" href="/Sequence/assets/js/runtime~main.5bedb222.js" as="script">
-<link rel="preload" href="/Sequence/assets/js/main.ab5c8ef1.js" as="script">
+<link rel="preload" href="/Sequence/assets/js/runtime~main.1c536fa5.js" as="script">
+<link rel="preload" href="/Sequence/assets/js/main.979f5c2c.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -40,149 +40,149 @@ Potential uses for this module would be a turn-base game to determine when a pla
 <p>Places at end if nil</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">SequenceTable</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code></div><div>
 <p>Adds an object to the Sequence to be run on Sequence:ForceTick()</p>
-<pre class="language-lua"><code class="language-lua">    <span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
 
-    <span class="token keyword">local</span> currentSequence <span class="token operator">=</span> MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>newSequence<span class="token punctuation">)</span>
+<span class="token keyword">local</span> currentSequence <span class="token operator">=</span> MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>newSequence<span class="token punctuation">)</span>
 
-    <span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
-    <span class="token punctuation">{</span> <span class="token string">"Hey there!"</span> <span class="token punctuation">}</span>
+<span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
+<span class="token punctuation">{</span> <span class="token string">"Hey there!"</span> <span class="token punctuation">}</span>
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Excludes"><code style="text-decoration:none">Excludes</code><a href="#Excludes" class="hash-link" aria-label="Direct link to Excludes" title="Direct link to Excludes">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/EnDarke/Sequence/blob/main/src/init.lua#L180"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Sequence<!-- -->:</code><code class="green_DgR4">Excludes</code><code>(</code><code>index<!-- -->: </code><code class="blue_P4bS">number</code><code>) → </code><code class="blue_P4bS">T</code></div><div>
 <p>Removes an object from the Sequence at given index</p>
-<pre class="language-lua"><code class="language-lua">    <span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
-    <span class="token keyword">local</span> removedObject <span class="token operator">=</span> MySequence<span class="token punctuation">:</span><span class="token function">Excludes</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>removedObject<span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> removedObject <span class="token operator">=</span> MySequence<span class="token punctuation">:</span><span class="token function">Excludes</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>removedObject<span class="token punctuation">)</span>
 
-    <span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
-    Hey there!
+<span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
+Hey there!
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ExcludeFromObject"><code style="text-decoration:none">ExcludeFromObject</code><a href="#ExcludeFromObject" class="hash-link" aria-label="Direct link to ExcludeFromObject" title="Direct link to ExcludeFromObject">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/EnDarke/Sequence/blob/main/src/init.lua#L215"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Sequence<!-- -->:</code><code class="green_DgR4">ExcludeFromObject</code><code>(</code><code>object<!-- -->: </code><code class="blue_P4bS">T</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Sequence/api/Sequence#void">void</a></code></div><div>
 <p>Removes an object from the Sequence at given index</p>
-<pre class="language-lua"><code class="language-lua">    <span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>MySequence<span class="token punctuation">:</span><span class="token function">GetCurrentSequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>MySequence<span class="token punctuation">:</span><span class="token function">GetCurrentSequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">ExcludeFromObject</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>MySequence<span class="token punctuation">:</span><span class="token function">GetCurrentSequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">ExcludeFromObject</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>MySequence<span class="token punctuation">:</span><span class="token function">GetCurrentSequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    <span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
-    <span class="token punctuation">{</span> <span class="token string">"Hey there!"</span> <span class="token punctuation">}</span>
-    <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
+<span class="token punctuation">{</span> <span class="token string">"Hey there!"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span>
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Get"><code style="text-decoration:none">Get</code><a href="#Get" class="hash-link" aria-label="Direct link to Get" title="Direct link to Get">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/EnDarke/Sequence/blob/main/src/init.lua#L249"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Sequence<!-- -->:</code><code class="green_DgR4">Get</code><code>(</code><code>index<!-- -->: </code><code class="blue_P4bS">number</code><code>) → </code><code class="blue_P4bS">T</code></div><div>
 <p>Used to find the object at index</p>
-<pre class="language-lua"><code class="language-lua">    <span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
 
-    <span class="token keyword">local</span> foundObject <span class="token operator">=</span> MySequence<span class="token punctuation">:</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>foundObject<span class="token punctuation">)</span>
+<span class="token keyword">local</span> foundObject <span class="token operator">=</span> MySequence<span class="token punctuation">:</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>foundObject<span class="token punctuation">)</span>
 
-    <span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
-    Hey there!
+<span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
+Hey there!
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Set"><code style="text-decoration:none">Set</code><a href="#Set" class="hash-link" aria-label="Direct link to Set" title="Direct link to Set">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/EnDarke/Sequence/blob/main/src/init.lua#L283"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Sequence<!-- -->:</code><code class="green_DgR4">Set</code><code>(</code><div class="inset_uKQm"><div><code>object<!-- -->: </code><code class="blue_P4bS">T</code><code>,</code></div><div><code>index<!-- -->: </code><code class="blue_P4bS">number</code><span class="inlineDescription_G7Er">-- <span>
 <p>Sets object at index 1 if nil</p>
 </span></span></div></div><code>) → </code><code class="blue_P4bS">SequenceTable</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code></div><div>
 <p>Adds object to sequence, but replaces any current value at given index</p>
-<pre class="language-lua"><code class="language-lua">    <span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
-        <span class="token function">print</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
-    <span class="token keyword">end</span><span class="token punctuation">)</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
 
-    <span class="token keyword">local</span> currentSequence <span class="token operator">=</span> MySequence<span class="token punctuation">:</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">"Nice to meet you!"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> currentSequence <span class="token operator">=</span> MySequence<span class="token punctuation">:</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">"Nice to meet you!"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
 
-    <span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
-    <span class="token punctuation">{</span> <span class="token string">"Nice to meet you!"</span> <span class="token punctuation">}</span>
+<span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
+<span class="token punctuation">{</span> <span class="token string">"Nice to meet you!"</span> <span class="token punctuation">}</span>
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="GetCurrentSequence"><code style="text-decoration:none">GetCurrentSequence</code><a href="#GetCurrentSequence" class="hash-link" aria-label="Direct link to GetCurrentSequence" title="Direct link to GetCurrentSequence">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/EnDarke/Sequence/blob/main/src/init.lua#L317"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Sequence<!-- -->:</code><code class="green_DgR4">GetCurrentSequence</code><code>(</code><code>) → </code><code class="blue_P4bS">SequenceTable</code><code class="op_lSLc">&lt;</code><code class="blue_P4bS">T</code><code class="op_lSLc">&gt;</code></div><div>
 <p>Returns current status of the <code>SequenceTable&#x3C;T></code></p>
-<pre class="language-lua"><code class="language-lua">    <span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Set</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
 
-    <span class="token keyword">local</span> currentSequence <span class="token operator">=</span> MySequence<span class="token punctuation">:</span><span class="token function">GetCurrentSequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>currentSequence<span class="token punctuation">)</span>
+<span class="token keyword">local</span> currentSequence <span class="token operator">=</span> MySequence<span class="token punctuation">:</span><span class="token function">GetCurrentSequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>currentSequence<span class="token punctuation">)</span>
 
-    <span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
-    <span class="token punctuation">{</span> <span class="token string">"Hey there!"</span> <span class="token punctuation">}</span>
+<span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
+<span class="token punctuation">{</span> <span class="token string">"Hey there!"</span> <span class="token punctuation">}</span>
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="SetCurrentLimit"><code style="text-decoration:none">SetCurrentLimit</code><a href="#SetCurrentLimit" class="hash-link" aria-label="Direct link to SetCurrentLimit" title="Direct link to SetCurrentLimit">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/EnDarke/Sequence/blob/main/src/init.lua#L348"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Sequence<!-- -->:</code><code class="green_DgR4">SetCurrentLimit</code><code>(</code><code>amount<!-- -->: </code><code class="blue_P4bS">number</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Sequence/api/Sequence#void">void</a></code></div><div>
 <p>Changes the limit of objects that the <code>SequenceTable&#x3C;T></code> can hold</p>
-<pre class="language-lua"><code class="language-lua">    <span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">,</span> Limit <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
-        <span class="token function">print</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
-    <span class="token keyword">end</span><span class="token punctuation">)</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">,</span> Limit <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Nice to meet you!"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Nice to meet you!"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">SetCurrentLimit</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">SetCurrentLimit</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"I've been good!"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"What about you?"</span><span class="token punctuation">)</span>
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Nothing much!"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"I've been good!"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"What about you?"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Nothing much!"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
 
-    <span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
-    <span class="token punctuation">{</span> <span class="token string">"I've been good!"</span><span class="token punctuation">,</span> <span class="token string">"Nothing much!"</span><span class="token punctuation">,</span> <span class="token string">"Nice to meet you!"</span> <span class="token punctuation">}</span>
+<span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
+<span class="token punctuation">{</span> <span class="token string">"I've been good!"</span><span class="token punctuation">,</span> <span class="token string">"Nothing much!"</span><span class="token punctuation">,</span> <span class="token string">"Nice to meet you!"</span> <span class="token punctuation">}</span>
 
-    <span class="token comment">-- Remember that :Includes() always places the object at the end.</span>
-    <span class="token comment">-- But inputting a number pushes all that are ahead of it, up!</span>
+<span class="token comment">-- Remember that :Includes() always places the object at the end.</span>
+<span class="token comment">-- But inputting a number pushes all that are ahead of it, up!</span>
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Iterate"><code style="text-decoration:none">Iterate</code><a href="#Iterate" class="hash-link" aria-label="Direct link to Iterate" title="Direct link to Iterate">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/EnDarke/Sequence/blob/main/src/init.lua#L375"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Sequence<!-- -->:</code><code class="green_DgR4">Iterate</code><code>(</code><code>stopAt<!-- -->: </code><code class="blue_P4bS">number</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Sequence/api/Sequence#void">void</a></code></div><div>
 <p>Runs a <code>tick cycle</code> over objects from first till <code>stopAt</code></p>
-<pre class="language-lua"><code class="language-lua">    <span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
-        <span class="token function">print</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
-    <span class="token keyword">end</span><span class="token punctuation">)</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Nice to meet you!"</span><span class="token punctuation">)</span>
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"I've been good!"</span><span class="token punctuation">)</span>
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"What about you?"</span><span class="token punctuation">)</span>
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Nothing much!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Nice to meet you!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"I've been good!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"What about you?"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Nothing much!"</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Iterate</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Iterate</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
 
-    <span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
-    <span class="token punctuation">{</span> <span class="token string">"Hey there!"</span><span class="token punctuation">,</span> <span class="token string">"Nice to meet you!"</span><span class="token punctuation">,</span> <span class="token string">"I've been good!"</span><span class="token punctuation">,</span> <span class="token string">"What about you?"</span> <span class="token punctuation">}</span>
+<span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
+<span class="token punctuation">{</span> <span class="token string">"Hey there!"</span><span class="token punctuation">,</span> <span class="token string">"Nice to meet you!"</span><span class="token punctuation">,</span> <span class="token string">"I've been good!"</span><span class="token punctuation">,</span> <span class="token string">"What about you?"</span> <span class="token punctuation">}</span>
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="ForceTick"><code style="text-decoration:none">ForceTick</code><a href="#ForceTick" class="hash-link" aria-label="Direct link to ForceTick" title="Direct link to ForceTick">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/EnDarke/Sequence/blob/main/src/init.lua#L427"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Sequence<!-- -->:</code><code class="green_DgR4">ForceTick</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Sequence/api/Sequence#void">void</a></code></div><div>
 <p>Forcefully runs a <code>tick cycle</code> through every sequence object</p>
-<pre class="language-lua"><code class="language-lua">    <span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
-        <span class="token function">print</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
-    <span class="token keyword">end</span><span class="token punctuation">)</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
+<span class="token keyword">end</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Nice to meet you!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Nice to meet you!"</span><span class="token punctuation">)</span>
 
-    task<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+task<span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"I've been good!"</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"I've been good!"</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">ForceTick</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">ForceTick</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-    <span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
-    <span class="token comment">-- After ~10 seconds</span>
-    <span class="token punctuation">{</span> <span class="token string">"Hey there!"</span><span class="token punctuation">,</span> <span class="token string">"Nice to meet you!"</span><span class="token punctuation">,</span> <span class="token string">"I've been good!"</span> <span class="token punctuation">}</span>
+<span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
+<span class="token comment">-- After ~10 seconds</span>
+<span class="token punctuation">{</span> <span class="token string">"Hey there!"</span><span class="token punctuation">,</span> <span class="token string">"Nice to meet you!"</span><span class="token punctuation">,</span> <span class="token string">"I've been good!"</span> <span class="token punctuation">}</span>
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Clean"><code style="text-decoration:none">Clean</code><a href="#Clean" class="hash-link" aria-label="Direct link to Clean" title="Direct link to Clean">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/EnDarke/Sequence/blob/main/src/init.lua#L487"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Sequence<!-- -->:</code><code class="green_DgR4">Clean</code><code>(</code><code>) → </code><code class="blue_P4bS">boolean</code></div><div>
 <p>Cleans up Sequence object and empties the <code>SequenceTable&#x3C;T></code></p>
-<pre class="language-lua"><code class="language-lua">    <span class="token keyword">local</span> MySequence <span class="token operator">=</span> Sequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
+<pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence <span class="token operator">=</span> Sequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">false</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span> <span class="token keyword">end</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>MySequence<span class="token punctuation">:</span><span class="token function">GetCurrentSequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Includes</span><span class="token punctuation">(</span><span class="token string">"Hey there!"</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>MySequence<span class="token punctuation">:</span><span class="token function">GetCurrentSequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    MySequence<span class="token punctuation">:</span><span class="token function">Clean</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+MySequence<span class="token punctuation">:</span><span class="token function">Clean</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-    <span class="token function">print</span><span class="token punctuation">(</span>MySequence<span class="token punctuation">:</span><span class="token function">GetCurrentSequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token function">print</span><span class="token punctuation">(</span>MySequence<span class="token punctuation">:</span><span class="token function">GetCurrentSequence</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-    <span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
-    <span class="token punctuation">{</span> <span class="token string">"Hey there!"</span> <span class="token punctuation">}</span>
-    <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token operator">&#x3C;</span>Output<span class="token operator">></span>
+<span class="token punctuation">{</span> <span class="token string">"Hey there!"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">{</span><span class="token punctuation">}</span>
 </code></pre>
 </div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a href="#Destroy" class="hash-link" aria-label="Direct link to Destroy" title="Direct link to Destroy">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/EnDarke/Sequence/blob/main/src/init.lua#L497"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>Sequence<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code class="blue_P4bS"><a style="text-decoration:underline;color:inherit" href="/Sequence/api/Sequence#void">void</a></code></div><div>
 <p>Destroys <code>Sequence</code> object permanently to never be restored</p>
@@ -220,7 +220,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         },
         {
             &quot;name&quot;: &quot;Includes&quot;,
-            &quot;desc&quot;: &quot;Adds an object to the Sequence to be run on Sequence:ForceTick()\n\n\n```lua\n    local MySequence.new({ Autotick = true }, function(sequenceTable) end)\n\n    local currentSequence = MySequence:Includes(\&quot;Hey there!\&quot;)\n    print(newSequence)\n\n    &lt;Output&gt;\n    { \&quot;Hey there!\&quot; }\n```&quot;,
+            &quot;desc&quot;: &quot;Adds an object to the Sequence to be run on Sequence:ForceTick()\n\n\n```lua\nlocal MySequence.new({ Autotick = true }, function(sequenceTable) end)\n\nlocal currentSequence = MySequence:Includes(\&quot;Hey there!\&quot;)\nprint(newSequence)\n\n&lt;Output&gt;\n{ \&quot;Hey there!\&quot; }\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;object&quot;,
@@ -247,7 +247,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         },
         {
             &quot;name&quot;: &quot;Excludes&quot;,
-            &quot;desc&quot;: &quot;Removes an object from the Sequence at given index\n\n\n```lua\n    local MySequence.new({ Autotick = true }, function(sequenceTable) end)\n\n    MySequence:Includes(\&quot;Hey there!\&quot;)\n    local removedObject = MySequence:Excludes(1)\n    print(removedObject)\n\n    &lt;Output&gt;\n    Hey there!\n```&quot;,
+            &quot;desc&quot;: &quot;Removes an object from the Sequence at given index\n\n\n```lua\nlocal MySequence.new({ Autotick = true }, function(sequenceTable) end)\n\nMySequence:Includes(\&quot;Hey there!\&quot;)\nlocal removedObject = MySequence:Excludes(1)\nprint(removedObject)\n\n&lt;Output&gt;\nHey there!\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;index&quot;,
@@ -269,7 +269,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         },
         {
             &quot;name&quot;: &quot;ExcludeFromObject&quot;,
-            &quot;desc&quot;: &quot;Removes an object from the Sequence at given index\n\n\n```lua\n    local MySequence.new({ Autotick = true }, function(sequenceTable) end)\n\n    MySequence:Includes(\&quot;Hey there!\&quot;)\n    print(MySequence:GetCurrentSequence())\n\n    MySequence:ExcludeFromObject(\&quot;Hey there!\&quot;)\n    print(MySequence:GetCurrentSequence())\n\n    &lt;Output&gt;\n    { \&quot;Hey there!\&quot; }\n    {}\n```&quot;,
+            &quot;desc&quot;: &quot;Removes an object from the Sequence at given index\n\n\n```lua\nlocal MySequence.new({ Autotick = true }, function(sequenceTable) end)\n\nMySequence:Includes(\&quot;Hey there!\&quot;)\nprint(MySequence:GetCurrentSequence())\n\nMySequence:ExcludeFromObject(\&quot;Hey there!\&quot;)\nprint(MySequence:GetCurrentSequence())\n\n&lt;Output&gt;\n{ \&quot;Hey there!\&quot; }\n{}\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;object&quot;,
@@ -291,7 +291,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         },
         {
             &quot;name&quot;: &quot;Get&quot;,
-            &quot;desc&quot;: &quot;Used to find the object at index\n\n\n```lua\n    local MySequence.new({ Autotick = true }, function(sequenceTable) end)\n\n    MySequence:Includes(\&quot;Hey there!\&quot;)\n\n    local foundObject = MySequence:Get(1)\n    print(foundObject)\n\n    &lt;Output&gt;\n    Hey there!\n```&quot;,
+            &quot;desc&quot;: &quot;Used to find the object at index\n\n\n```lua\nlocal MySequence.new({ Autotick = true }, function(sequenceTable) end)\n\nMySequence:Includes(\&quot;Hey there!\&quot;)\n\nlocal foundObject = MySequence:Get(1)\nprint(foundObject)\n\n&lt;Output&gt;\nHey there!\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;index&quot;,
@@ -313,7 +313,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         },
         {
             &quot;name&quot;: &quot;Set&quot;,
-            &quot;desc&quot;: &quot;Adds object to sequence, but replaces any current value at given index\n\n\n```lua\n    local MySequence.new({ Autotick = true }, function(sequenceTable)\n        print(sequenceTable)\n    end)\n\n    MySequence:Includes(\&quot;Hey there!\&quot;)\n\n    local currentSequence = MySequence:Set(\&quot;Nice to meet you!\&quot;, 1)\n\n    &lt;Output&gt;\n    { \&quot;Nice to meet you!\&quot; }\n```&quot;,
+            &quot;desc&quot;: &quot;Adds object to sequence, but replaces any current value at given index\n\n\n```lua\nlocal MySequence.new({ Autotick = true }, function(sequenceTable)\n    print(sequenceTable)\nend)\n\nMySequence:Includes(\&quot;Hey there!\&quot;)\n\nlocal currentSequence = MySequence:Set(\&quot;Nice to meet you!\&quot;, 1)\n\n&lt;Output&gt;\n{ \&quot;Nice to meet you!\&quot; }\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;object&quot;,
@@ -340,7 +340,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         },
         {
             &quot;name&quot;: &quot;GetCurrentSequence&quot;,
-            &quot;desc&quot;: &quot;Returns current status of the `SequenceTable&lt;T&gt;`\n\n```lua\n    local MySequence.new({ Autotick = false }, function(sequenceTable) end)\n\n    MySequence:Set(\&quot;Hey there!\&quot;)\n\n    local currentSequence = MySequence:GetCurrentSequence()\n    print(currentSequence)\n\n    &lt;Output&gt;\n    { \&quot;Hey there!\&quot; }\n```&quot;,
+            &quot;desc&quot;: &quot;Returns current status of the `SequenceTable&lt;T&gt;`\n\n```lua\nlocal MySequence.new({ Autotick = false }, function(sequenceTable) end)\n\nMySequence:Set(\&quot;Hey there!\&quot;)\n\nlocal currentSequence = MySequence:GetCurrentSequence()\nprint(currentSequence)\n\n&lt;Output&gt;\n{ \&quot;Hey there!\&quot; }\n```&quot;,
             &quot;params&quot;: [],
             &quot;returns&quot;: [
                 {
@@ -356,7 +356,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         },
         {
             &quot;name&quot;: &quot;SetCurrentLimit&quot;,
-            &quot;desc&quot;: &quot;Changes the limit of objects that the `SequenceTable&lt;T&gt;` can hold\n\n\n```lua\n    local MySequence.new({ Autotick = true, Limit = 1 }, function(sequenceTable)\n        print(sequenceTable)\n    end)\n\n    MySequence:Includes(\&quot;Hey there!\&quot;)\n    MySequence:Includes(\&quot;Nice to meet you!\&quot;, 1)\n\n    MySequence:SetCurrentLimit(3)\n\n    MySequence:Includes(\&quot;I&#x27;ve been good!\&quot;, 1)\n    MySequence:Includes(\&quot;What about you?\&quot;)\n    MySequence:Includes(\&quot;Nothing much!\&quot;, 2)\n\n    &lt;Output&gt;\n    { \&quot;I&#x27;ve been good!\&quot;, \&quot;Nothing much!\&quot;, \&quot;Nice to meet you!\&quot; }\n\n    -- Remember that :Includes() always places the object at the end.\n    -- But inputting a number pushes all that are ahead of it, up!\n```&quot;,
+            &quot;desc&quot;: &quot;Changes the limit of objects that the `SequenceTable&lt;T&gt;` can hold\n\n\n```lua\nlocal MySequence.new({ Autotick = true, Limit = 1 }, function(sequenceTable)\n    print(sequenceTable)\nend)\n\nMySequence:Includes(\&quot;Hey there!\&quot;)\nMySequence:Includes(\&quot;Nice to meet you!\&quot;, 1)\n\nMySequence:SetCurrentLimit(3)\n\nMySequence:Includes(\&quot;I&#x27;ve been good!\&quot;, 1)\nMySequence:Includes(\&quot;What about you?\&quot;)\nMySequence:Includes(\&quot;Nothing much!\&quot;, 2)\n\n&lt;Output&gt;\n{ \&quot;I&#x27;ve been good!\&quot;, \&quot;Nothing much!\&quot;, \&quot;Nice to meet you!\&quot; }\n\n-- Remember that :Includes() always places the object at the end.\n-- But inputting a number pushes all that are ahead of it, up!\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;amount&quot;,
@@ -378,7 +378,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         },
         {
             &quot;name&quot;: &quot;Iterate&quot;,
-            &quot;desc&quot;: &quot;Runs a `tick cycle` over objects from first till `stopAt`\n\n\n```lua\n    local MySequence.new({ Autotick = false }, function(sequenceTable)\n        print(sequenceTable)\n    end)\n\n    MySequence:Includes(\&quot;Hey there!\&quot;)\n    MySequence:Includes(\&quot;Nice to meet you!\&quot;)\n    MySequence:Includes(\&quot;I&#x27;ve been good!\&quot;)\n    MySequence:Includes(\&quot;What about you?\&quot;)\n    MySequence:Includes(\&quot;Nothing much!\&quot;)\n\n    MySequence:Iterate(4)\n\n    &lt;Output&gt;\n    { \&quot;Hey there!\&quot;, \&quot;Nice to meet you!\&quot;, \&quot;I&#x27;ve been good!\&quot;, \&quot;What about you?\&quot; }\n```&quot;,
+            &quot;desc&quot;: &quot;Runs a `tick cycle` over objects from first till `stopAt`\n\n\n```lua\nlocal MySequence.new({ Autotick = false }, function(sequenceTable)\n    print(sequenceTable)\nend)\n\nMySequence:Includes(\&quot;Hey there!\&quot;)\nMySequence:Includes(\&quot;Nice to meet you!\&quot;)\nMySequence:Includes(\&quot;I&#x27;ve been good!\&quot;)\nMySequence:Includes(\&quot;What about you?\&quot;)\nMySequence:Includes(\&quot;Nothing much!\&quot;)\n\nMySequence:Iterate(4)\n\n&lt;Output&gt;\n{ \&quot;Hey there!\&quot;, \&quot;Nice to meet you!\&quot;, \&quot;I&#x27;ve been good!\&quot;, \&quot;What about you?\&quot; }\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;stopAt&quot;,
@@ -400,7 +400,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         },
         {
             &quot;name&quot;: &quot;ForceTick&quot;,
-            &quot;desc&quot;: &quot;Forcefully runs a `tick cycle` through every sequence object\n\n```lua\n    local MySequence.new({ Autotick = false }, function(sequenceTable)\n        print(sequenceTable)\n    end)\n\n    MySequence:Includes(\&quot;Hey there!\&quot;)\n    MySequence:Includes(\&quot;Nice to meet you!\&quot;)\n\n    task.wait(10)\n\n    MySequence:Includes(\&quot;I&#x27;ve been good!\&quot;)\n\n    MySequence:ForceTick()\n\n    &lt;Output&gt;\n    -- After ~10 seconds\n    { \&quot;Hey there!\&quot;, \&quot;Nice to meet you!\&quot;, \&quot;I&#x27;ve been good!\&quot; }\n```&quot;,
+            &quot;desc&quot;: &quot;Forcefully runs a `tick cycle` through every sequence object\n\n```lua\nlocal MySequence.new({ Autotick = false }, function(sequenceTable)\n    print(sequenceTable)\nend)\n\nMySequence:Includes(\&quot;Hey there!\&quot;)\nMySequence:Includes(\&quot;Nice to meet you!\&quot;)\n\ntask.wait(10)\n\nMySequence:Includes(\&quot;I&#x27;ve been good!\&quot;)\n\nMySequence:ForceTick()\n\n&lt;Output&gt;\n-- After ~10 seconds\n{ \&quot;Hey there!\&quot;, \&quot;Nice to meet you!\&quot;, \&quot;I&#x27;ve been good!\&quot; }\n```&quot;,
             &quot;params&quot;: [],
             &quot;returns&quot;: [
                 {
@@ -416,7 +416,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         },
         {
             &quot;name&quot;: &quot;Clean&quot;,
-            &quot;desc&quot;: &quot;Cleans up Sequence object and empties the `SequenceTable&lt;T&gt;`\n\n```lua\n    local MySequence = Sequence.new({ Autotick = false }, function(sequenceTable) end)\n\n    MySequence:Includes(\&quot;Hey there!\&quot;)\n    print(MySequence:GetCurrentSequence())\n\n    MySequence:Clean()\n\n    print(MySequence:GetCurrentSequence())\n\n    &lt;Output&gt;\n    { \&quot;Hey there!\&quot; }\n    {}\n```&quot;,
+            &quot;desc&quot;: &quot;Cleans up Sequence object and empties the `SequenceTable&lt;T&gt;`\n\n```lua\nlocal MySequence = Sequence.new({ Autotick = false }, function(sequenceTable) end)\n\nMySequence:Includes(\&quot;Hey there!\&quot;)\nprint(MySequence:GetCurrentSequence())\n\nMySequence:Clean()\n\nprint(MySequence:GetCurrentSequence())\n\n&lt;Output&gt;\n{ \&quot;Hey there!\&quot; }\n{}\n```&quot;,
             &quot;params&quot;: [],
             &quot;returns&quot;: [
                 {
@@ -521,7 +521,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
         &quot;path&quot;: &quot;src/init.lua&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#Sequence&lt;T&gt;" class="table-of-contents__link toc-highlight">Sequence<t></t></a></li><li><a href="#SequenceTable&lt;T&gt;" class="table-of-contents__link toc-highlight">SequenceTable<t></t></a></li><li><a href="#void" class="table-of-contents__link toc-highlight">void</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#Autotick" class="table-of-contents__link toc-highlight">Autotick</a></li><li><a href="#ClearOnTick" class="table-of-contents__link toc-highlight">ClearOnTick</a></li><li><a href="#Limit" class="table-of-contents__link toc-highlight">Limit</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Clean" class="table-of-contents__link toc-highlight">:Clean</a></li><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#ExcludeFromObject" class="table-of-contents__link toc-highlight">:ExcludeFromObject</a></li><li><a href="#Excludes" class="table-of-contents__link toc-highlight">:Excludes</a></li><li><a href="#ForceTick" class="table-of-contents__link toc-highlight">:ForceTick</a></li><li><a href="#Get" class="table-of-contents__link toc-highlight">:Get</a></li><li><a href="#GetCurrentSequence" class="table-of-contents__link toc-highlight">:GetCurrentSequence</a></li><li><a href="#Includes" class="table-of-contents__link toc-highlight">:Includes</a></li><li><a href="#Iterate" class="table-of-contents__link toc-highlight">:Iterate</a></li><li><a href="#Set" class="table-of-contents__link toc-highlight">:Set</a></li><li><a href="#SetCurrentLimit" class="table-of-contents__link toc-highlight">:SetCurrentLimit</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 EnDarke. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/Sequence/assets/js/runtime~main.5bedb222.js"></script>
-<script src="/Sequence/assets/js/main.ab5c8ef1.js"></script>
+<script src="/Sequence/assets/js/runtime~main.1c536fa5.js"></script>
+<script src="/Sequence/assets/js/main.979f5c2c.js"></script>
 </body>
 </html>
