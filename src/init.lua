@@ -66,8 +66,7 @@ Sequence.__index = Sequence
 
 function Sequence.new<T>(settings: {}, callback: callback) : Sequence<T> | nil
     if not ( callback ) then
-        warn(".new() | Sequence needs a callback function")
-        return
+        error(".new() | Sequence needs a callback function")
     end
 
     local self: Sequence<T> = setmetatable({}, Sequence)
@@ -125,8 +124,7 @@ end
 
 function Sequence:ExcludeFromObject<T>(object: T) : void
     if not ( object ) then
-        warn(":ExcludeFromObject<T>() | Needs object input to perform action")
-        return
+        error(":ExcludeFromObject<T>() | Needs object input to perform action")
     end
 
     local foundIndex: number = table.find(self._sequence, object)
@@ -156,8 +154,7 @@ end
 
 function Sequence:Set<T>(object: T, index: number) : SequenceTable<T> | nil
     if not ( object ) then
-        warn(":Set<T>() | Object is missing")
-        return
+        error(":Set<T>() | Object is missing")
     end
 
     if not ( index ) then
@@ -183,8 +180,7 @@ end
 
 function Sequence:Iterate<T>(stopAt: number) : void
     if not ( stopAt ) then
-        warn(":Iterate<T>() | Cannot iterate without inputting a number to stop at")
-        return
+        error(":Iterate<T>() | Cannot iterate without inputting a number to stop at")
     end
 
     if ( self._autotick ) then
@@ -215,8 +211,7 @@ function Sequence:ForceTick() : void
     if ( self._isTicking ) then return end
 
     if ( self._autotick ) then
-        warn(":ForceTick<T>() | Cannot run whilst Autotick is enabled")
-        return
+        warn(":ForceTick<T>() | Shouldn't run whilst Autotick is enabled")
     end
 
     -- Run tick for sequenced objects
@@ -260,13 +255,8 @@ function Sequence:Clean() : boolean | nil
 end
 
 function Sequence:Destroy() : void
-    local result = self:Clean()
-
-    if not ( result ) then
-        warn(":Destroy() | Cannot perform action while ticking")
-        return
-    end
-
+    self._tickScheduled = false
+    self:Clean()
     setmetatable(self, nil)
 end
 
