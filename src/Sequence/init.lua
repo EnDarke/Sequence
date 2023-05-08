@@ -1,17 +1,17 @@
 --!strict
 
 --[[
-    @class Sequence
-    License: MIT
-
     Author(s):
         Alex/EnDarke
     Date:
         05/06/23
     Description:
         Used to load up tasks and run them on next defer, or when forcefully flushed.
+]]
 
-    Functions:
+--[=[
+    @class Sequence
+
         ```lua
         .new<T>() : Sequence<T> | nil
             -- Creates a new Sequence object
@@ -39,7 +39,7 @@
         :Destroy() : void
             -- Used to clean and completely remove Sequence object permanently
         ```
-]]
+]=]
 
 -- Declaring Custom Types
 type void = nil
@@ -60,11 +60,23 @@ type Sequence<T> = typeof(setmetatable({})) & {
     Destroy: () -> void;
 }
 
+-- Declaring Constants
+local DEFAULT_AUTOTICK = true
+local DEFAULT_CLEARONTICK = true
+local DEFAULT_LIMIT = nil
+
 -- Module Code
 local Sequence = {}
 Sequence.__index = Sequence
 
-function Sequence.new<T>(settings: {}, callback: callback) : Sequence<T> | nil
+--[=[
+    Creates a new Sequence object
+
+    @param settings {}
+    @param callback function
+]=]
+
+function Sequence.new<T>(settings: {}, callback: callback) : Sequence<T>
     if not ( callback ) then
         error(".new() | Sequence needs a callback function")
     end
@@ -72,9 +84,9 @@ function Sequence.new<T>(settings: {}, callback: callback) : Sequence<T> | nil
     local self: Sequence<T> = setmetatable({}, Sequence)
 
     -- Settings
-    self._autotick = settings.Autotick ~= nil and settings.Autotick or true
-    self._clearOnTick = settings.ClearOnTick ~= nil and settings.ClearOnTick or true
-    self._limit = settings.Limit
+    self._autotick = if ( typeof(settings.Autotick) == "boolean" ) then settings.Autotick else DEFAULT_AUTOTICK
+    self._clearOnTick = if ( typeof(settings.ClearOnTick) == "boolean" ) then settings.ClearOnTick else DEFAULT_CLEARONTICK
+    self._limit = if ( typeof(settings.Limit) == "number" ) then settings.Limit else DEFAULT_LIMIT
 
     -- Properties
     self._sequence = {} :: Sequence<T>
@@ -86,6 +98,13 @@ function Sequence.new<T>(settings: {}, callback: callback) : Sequence<T> | nil
 
     return self
 end
+
+--[=[
+    Adds an object to the Sequence to be run on Sequence:ForceTick()
+
+    @param object T
+    @param index number
+]=]
 
 function Sequence:Includes<T>(object: T, index: number) : SequenceTable<T>
     if not ( index ) then
@@ -107,7 +126,13 @@ function Sequence:Includes<T>(object: T, index: number) : SequenceTable<T>
     return self._sequence
 end
 
-function Sequence:Excludes<T>(index: number) : T | nil
+--[=[
+    Removes an object from the Sequence at given index
+
+    @param index number
+]=]
+
+function Sequence:Excludes<T>(index: number) : T
     if not ( index ) then
         index = 1
     end
@@ -121,6 +146,12 @@ function Sequence:Excludes<T>(index: number) : T | nil
 
     return removedObject
 end
+
+--[=[
+    Removes an object from the Sequence at given index
+
+    @param object T
+]=]
 
 function Sequence:ExcludeFromObject<T>(object: T) : void
     if not ( object ) then
@@ -138,7 +169,13 @@ function Sequence:ExcludeFromObject<T>(object: T) : void
     return foundIndex
 end
 
-function Sequence:Get<T>(index: number) : T | nil
+--[=[
+    Used to find the object at index
+
+    @param index number
+]=]
+
+function Sequence:Get<T>(index: number) : T
     if not ( index ) then
         index = 1
     end
@@ -152,7 +189,14 @@ function Sequence:Get<T>(index: number) : T | nil
     return foundObject
 end
 
-function Sequence:Set<T>(object: T, index: number) : SequenceTable<T> | nil
+--[=[
+    Adds object to sequence, but replaces any current value at given index
+
+    @param object T
+    @param index number
+]=]
+
+function Sequence:Set<T>(object: T, index: number) : SequenceTable<T>
     if not ( object ) then
         error(":Set<T>() | Object is missing")
     end
@@ -170,13 +214,29 @@ function Sequence:Set<T>(object: T, index: number) : SequenceTable<T> | nil
     return self._sequence
 end
 
+--[=[
+    Returns current status of the sequence
+]=]
+
 function Sequence:GetCurrentSequence<T>() : SequenceTable<T>
     return self._sequence
 end
 
+--[=[
+    Changes the limit of objects that the sequence can hold
+
+    @param amount number
+]=]
+
 function Sequence:SetCurrentLimit(amount: number) : void
     self._limit = amount
 end
+
+--[=[
+    Runs a tick cycle based on first object and stopAt object
+
+    @param stopAt number
+]=]
 
 function Sequence:Iterate<T>(stopAt: number) : void
     if not ( stopAt ) then
