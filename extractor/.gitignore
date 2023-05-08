@@ -1,5 +1,0 @@
-/target
-**/*.rs.bk
-
-# Unconfirmed Insta snapshots
-**/*.snap.new
