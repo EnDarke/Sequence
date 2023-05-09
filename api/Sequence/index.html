@@ -8,8 +8,8 @@
 Potential uses for this module would be a turn-base game to determine when a player will go, setting up a network package handler, or even just for sending out notifications to players!"><meta data-rh="true" property="og:description" content="Sequence allows you to sort tasks in sequential order to run. These tasks are run either on the next resumption cycle, or on-command!
 
 Potential uses for this module would be a turn-base game to determine when a player will go, setting up a network package handler, or even just for sending out notifications to players!"><link data-rh="true" rel="canonical" href="https://EnDarke.github.io/Sequence/api/Sequence"><link data-rh="true" rel="alternate" href="https://EnDarke.github.io/Sequence/api/Sequence" hreflang="en"><link data-rh="true" rel="alternate" href="https://EnDarke.github.io/Sequence/api/Sequence" hreflang="x-default"><link rel="stylesheet" href="/Sequence/assets/css/styles.a5aeb1da.css">
-<link rel="preload" href="/Sequence/assets/js/runtime~main.9d143f0f.js" as="script">
-<link rel="preload" href="/Sequence/assets/js/main.f65a4169.js" as="script">
+<link rel="preload" href="/Sequence/assets/js/runtime~main.c61cc65d.js" as="script">
+<link rel="preload" href="/Sequence/assets/js/main.3186f7e2.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -53,7 +53,7 @@ Potential uses for this module would be a turn-base game to determine when a pla
 </span></span></div></div><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Bulk adds objects to the Sequence from an array to be run on Sequence:ForceTick()</p>
 <pre class="language-lua"><code class="language-lua"><span class="token keyword">local</span> MySequence <span class="token operator">=</span> Sequence<span class="token punctuation">.</span><span class="token function">new</span><span class="token punctuation">(</span><span class="token punctuation">{</span> Autotick <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>sequencetable<span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>sequenceTable<span class="token punctuation">)</span>
 <span class="token keyword">end</span><span class="token punctuation">)</span>
 
 <span class="token keyword">local</span> myTable <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"I've been good!"</span><span class="token punctuation">,</span> <span class="token string">"What about you?"</span><span class="token punctuation">}</span>
@@ -262,7 +262,7 @@ MySequence<span class="token punctuation">:</span><span class="token function">C
         },
         {
             &quot;name&quot;: &quot;IncludeArray&quot;,
-            &quot;desc&quot;: &quot;Bulk adds objects to the Sequence from an array to be run on Sequence:ForceTick()\n\n\n```lua\nlocal MySequence = Sequence.new({ Autotick = true }, function(sequenceTable)\n    print(sequencetable)\nend)\n\nlocal myTable = {\&quot;I&#x27;ve been good!\&quot;, \&quot;What about you?\&quot;}\nMySequence:Includes(\&quot;Hey there!\&quot;)\nMySequence:Includes(\&quot;Nice to meet you!\&quot;)\nMySequence:IncludeArray(myTable, 2)\n```\n```\n&lt;Output&gt;\n{ \&quot;Hey there!\&quot;, \&quot;I&#x27;ve been good!\&quot;, \&quot;What about you?\&quot;, \&quot;Nice to meet you!\&quot; }\n```&quot;,
+            &quot;desc&quot;: &quot;Bulk adds objects to the Sequence from an array to be run on Sequence:ForceTick()\n\n\n```lua\nlocal MySequence = Sequence.new({ Autotick = true }, function(sequenceTable)\n    print(sequenceTable)\nend)\n\nlocal myTable = {\&quot;I&#x27;ve been good!\&quot;, \&quot;What about you?\&quot;}\nMySequence:Includes(\&quot;Hey there!\&quot;)\nMySequence:Includes(\&quot;Nice to meet you!\&quot;)\nMySequence:IncludeArray(myTable, 2)\n```\n```\n&lt;Output&gt;\n{ \&quot;Hey there!\&quot;, \&quot;I&#x27;ve been good!\&quot;, \&quot;What about you?\&quot;, \&quot;Nice to meet you!\&quot; }\n```&quot;,
             &quot;params&quot;: [
                 {
                     &quot;name&quot;: &quot;array&quot;,
@@ -558,7 +558,7 @@ MySequence<span class="token punctuation">:</span><span class="token function">C
         &quot;path&quot;: &quot;src/init.lua&quot;
     }
 }</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a><ul><li><a href="#Sequence&lt;T&gt;" class="table-of-contents__link toc-highlight">Sequence<t></t></a></li><li><a href="#SequenceTable&lt;T&gt;" class="table-of-contents__link toc-highlight">SequenceTable<t></t></a></li><li><a href="#void" class="table-of-contents__link toc-highlight">void</a></li></ul></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a><ul><li><a href="#Autotick" class="table-of-contents__link toc-highlight">Autotick</a></li><li><a href="#ClearOnTick" class="table-of-contents__link toc-highlight">ClearOnTick</a></li><li><a href="#Limit" class="table-of-contents__link toc-highlight">Limit</a></li></ul></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Clean" class="table-of-contents__link toc-highlight">:Clean</a></li><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#ExcludeFromObject" class="table-of-contents__link toc-highlight">:ExcludeFromObject</a></li><li><a href="#Excludes" class="table-of-contents__link toc-highlight">:Excludes</a></li><li><a href="#ForceTick" class="table-of-contents__link toc-highlight">:ForceTick</a></li><li><a href="#Get" class="table-of-contents__link toc-highlight">:Get</a></li><li><a href="#GetCurrentSequence" class="table-of-contents__link toc-highlight">:GetCurrentSequence</a></li><li><a href="#IncludeArray" class="table-of-contents__link toc-highlight">:IncludeArray</a></li><li><a href="#Includes" class="table-of-contents__link toc-highlight">:Includes</a></li><li><a href="#Iterate" class="table-of-contents__link toc-highlight">:Iterate</a></li><li><a href="#Set" class="table-of-contents__link toc-highlight">:Set</a></li><li><a href="#SetCurrentLimit" class="table-of-contents__link toc-highlight">:SetCurrentLimit</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 EnDarke. Built with Moonwave and Docusaurus.</div></div></div></footer></div>
-<script src="/Sequence/assets/js/runtime~main.9d143f0f.js"></script>
-<script src="/Sequence/assets/js/main.f65a4169.js"></script>
+<script src="/Sequence/assets/js/runtime~main.c61cc65d.js"></script>
+<script src="/Sequence/assets/js/main.3186f7e2.js"></script>
 </body>
 </html>
