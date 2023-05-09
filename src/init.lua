@@ -93,7 +93,7 @@ Sequence.__index = Sequence
     Creates a new Sequence object
 
     ```lua
-    local MySequence.new({ Autotick = true, ClearOnTick = true, Limit = 10 }, function(sequenceTable)
+    local MySequence = Sequence.new({ Autotick = true, ClearOnTick = true, Limit = 10 }, function(sequenceTable)
         for _, object in sequenceTable do
             print("Object " .. object .. " is in the sequence!")
         end
@@ -128,10 +128,10 @@ end
     Adds an object to the Sequence to be run on Sequence:ForceTick()
 
     @param object T
-    @param index number -- Places at end if nil
+    @param index number -- Places at the end of the sequence if nil
 
     ```lua
-    local MySequence.new({ Autotick = true }, function(sequenceTable) end)
+    local MySequence = Sequence.new({ Autotick = true }, function(sequenceTable) end)
 
     local currentSequence = MySequence:Includes("Hey there!")
     print(newSequence)
@@ -145,13 +145,6 @@ end
 function Sequence:Includes<T>(object: T, index: number) : SequenceTable<T>
     if not ( index ) then
         index = self:_findNextIndex()
-    end
-
-    if ( type(object) == "table" ) then
-        for _, obj in ipairs( object ) do
-            self:Includes(obj, index)
-        end
-        return
     end
 
     table.insert(self._sequence, index, object)
@@ -170,12 +163,48 @@ function Sequence:Includes<T>(object: T, index: number) : SequenceTable<T>
 end
 
 --[=[
+    Bulk adds objects to the Sequence from an array to be run on Sequence:ForceTick()
+
+    @param array { T }
+    @param index number -- Places at the end of the sequence if nil
+
+    ```lua
+    local MySequence = Sequence.new({ Autotick = true }, function(sequenceTable)
+        print(sequencetable)
+    end)
+
+    local myTable = {"I've been good!", "What about you?"}
+    MySequence:Includes("Hey there!")
+    MySequence:Includes("Nice to meet you!")
+    MySequence:IncludeArray(myTable, 2)
+    ```
+    ```
+    <Output>
+    { "Hey there!", "I've been good!", "What about you?", "Nice to meet you!" }
+    ```
+]=]
+
+function Sequence:IncludeArray<T>(array: { T }, index: number)
+    if ( typeof(array) ~= "table" ) then
+        error(":IncludeArray<T>() | Must input an array!")
+    end
+
+    if not ( index ) then
+        index = if ( #self._sequence < 1 ) then 0 else self:_findNextIndex()
+    end
+
+    for ind, obj in ipairs( array ) do
+        self:Includes(obj, index + ind)
+    end
+end
+
+--[=[
     Removes an object from the Sequence at given index
 
     @param index number
 
     ```lua
-    local MySequence.new({ Autotick = true }, function(sequenceTable) end)
+    local MySequence = Sequence.new({ Autotick = true }, function(sequenceTable) end)
 
     MySequence:Includes("Hey there!")
     local removedObject = MySequence:Excludes(1)
@@ -208,7 +237,7 @@ end
     @param object T
 
     ```lua
-    local MySequence.new({ Autotick = true }, function(sequenceTable) end)
+    local MySequence = Sequence.new({ Autotick = true }, function(sequenceTable) end)
 
     MySequence:Includes("Hey there!")
     print(MySequence:GetCurrentSequence())
@@ -245,7 +274,7 @@ end
     @param index number
 
     ```lua
-    local MySequence.new({ Autotick = true }, function(sequenceTable) end)
+    local MySequence = Sequence.new({ Autotick = true }, function(sequenceTable) end)
 
     MySequence:Includes("Hey there!")
 
@@ -279,7 +308,7 @@ end
     @param index number -- Sets object at index 1 if nil
 
     ```lua
-    local MySequence.new({ Autotick = true }, function(sequenceTable)
+    local MySequence = Sequence.new({ Autotick = true }, function(sequenceTable)
         print(sequenceTable)
     end)
 
@@ -315,7 +344,7 @@ end
     Returns current status of the `SequenceTable<T>`
 
     ```lua
-    local MySequence.new({ Autotick = false }, function(sequenceTable) end)
+    local MySequence = Sequence.new({ Autotick = false }, function(sequenceTable) end)
 
     MySequence:Set("Hey there!")
 
@@ -338,7 +367,7 @@ end
     @param amount number
 
     ```lua
-    local MySequence.new({ Autotick = true, Limit = 1 }, function(sequenceTable)
+    local MySequence = Sequence.new({ Autotick = true, Limit = 1 }, function(sequenceTable)
         print(sequenceTable)
     end)
 
@@ -370,7 +399,7 @@ end
     @param stopAt number
 
     ```lua
-    local MySequence.new({ Autotick = false }, function(sequenceTable)
+    local MySequence = Sequence.new({ Autotick = false }, function(sequenceTable)
         print(sequenceTable)
     end)
 
@@ -421,7 +450,7 @@ end
     Forcefully runs a `tick cycle` through every sequence object
 
     ```lua
-    local MySequence.new({ Autotick = false }, function(sequenceTable)
+    local MySequence = Sequence.new({ Autotick = false }, function(sequenceTable)
         print(sequenceTable)
     end)
 
