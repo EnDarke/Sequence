@@ -170,7 +170,7 @@ end
 
     ```lua
     local MySequence = Sequence.new({ Autotick = true }, function(sequenceTable)
-        print(sequencetable)
+        print(sequenceTable)
     end)
 
     local myTable = {"I've been good!", "What about you?"}
