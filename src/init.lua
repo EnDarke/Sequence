@@ -109,8 +109,8 @@ function Sequence.new<T>(settings: {}, callback: callback) : Sequence<T>
     local self: Sequence<T> = setmetatable({}, Sequence)
 
     -- Settings
-    self._autotick = if ( typeof(settings.Autotick) == "boolean" ) then settings.Autotick else DEFAULT_AUTOTICK
-    self._clearOnTick = if ( typeof(settings.ClearOnTick) == "boolean" ) then settings.ClearOnTick else DEFAULT_CLEARONTICK
+    self.Autotick = if ( typeof(settings.Autotick) == "boolean" ) then settings.Autotick else DEFAULT_AUTOTICK
+    self.ClearOnTick = if ( typeof(settings.ClearOnTick) == "boolean" ) then settings.ClearOnTick else DEFAULT_CLEARONTICK
     self.Limit = if ( typeof(settings.Limit) == "number" ) then settings.Limit else DEFAULT_LIMIT
 
     -- Properties
