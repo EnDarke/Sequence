@@ -150,12 +150,12 @@ function Sequence:Includes<T>(object: T, index: number) : SequenceTable<T>
     table.insert(self._sequence, index, object)
 
     -- Sequence ceiling limiter
-    if ( self._limit and (#self._sequence > self._limit) ) then
+    if ( self.Limit and (#self._sequence > self.Limit) ) then
         self:Excludes(#self._sequence)
     end
 
     -- Check if on autotick/run tick sequence
-    if ( self._autotick ) then
+    if ( self.Autotick ) then
         self:_tick()
     end
 
@@ -333,7 +333,7 @@ function Sequence:Set<T>(object: T, index: number) : SequenceTable<T>
         index = 1
     end
 
-    if ( self._limit and (index > self._limit) ) then
+    if ( self.Limit and (index > self.Limit) ) then
         warn(":Set<T>() | Cannot set object higher than limit")
     end
 
@@ -424,7 +424,7 @@ function Sequence:Iterate<T>(stopAt: number) : void
         error(":Iterate<T>() | Cannot iterate without inputting a number to stop at")
     end
 
-    if ( self._autotick ) then
+    if ( self.Autotick ) then
         warn(":Iterate<T>() | Cannot run whilst Autotick is enabled")
     end
 
@@ -439,7 +439,7 @@ function Sequence:Iterate<T>(stopAt: number) : void
 
         table.insert(iteration, index, object)
 
-        if ( self._clearOnTick ) then
+        if ( self.ClearOnTick ) then
             table.remove(self._sequence, index)
         end
     end
@@ -474,7 +474,7 @@ end
 function Sequence:ForceTick() : void
     if ( self._isTicking ) then return end
 
-    if ( self._autotick ) then
+    if ( self.Autotick ) then
         warn(":ForceTick<T>() | Shouldn't run whilst Autotick is enabled")
     end
 
@@ -502,7 +502,7 @@ function Sequence:_tick<T>(iteration: SequenceTable<T>) : void
         -- Cleanup
         self._tickScheduled = false
 
-        if ( self._clearOnTick ) then
+        if ( self.ClearOnTick ) then
             self:Clean()
         end
     end)

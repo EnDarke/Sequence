@@ -7,7 +7,7 @@
 Sequence allows developers to quickly sort their objects to run on code resumption cycles, as well as have control over which resumption cycle you'd like for it to run on.
 
 ## Wally Dependency
-`Sequence = "endarke/sequence@1.3.1"`
+`Sequence = "endarke/sequence@1.4.0"`
 
 # [<kbd> <br>    Sequence API Page    <br> </kbd>][KBD]
 
