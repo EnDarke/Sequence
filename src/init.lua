@@ -13,9 +13,13 @@
     @class Sequence
     @__index sequence
 
-    Sequence allows you to sort tasks in sequential order to run. These tasks are run either on the next resumption cycle, or on-command!
+    The Sequence Module is an advanced task management system that enables users to meticulously arrange tasks in a sequential order for execution. The execution of these tasks can be configured to occur either in the subsequent system resumption cycle or upon the issuance of a specific command.
 
-    Potential uses for this module would be a turn-base game to determine when a player will go, setting up a network package handler, or even just for sending out notifications to players!
+    This module is characterized by its versatility, making it applicable across various domains. For instance, here are some examples where this module may be applicable!
+    - **Turn-Based Games:** Calculate and dictate the order of play, ensuring a structured and engaging gaming experience.
+    - **Network Packet Handling:** Develop an efficient network packet handler to maintain the reliability and performance of data communications.
+    - **Notification Management:** Devise an organized system for the dissemination of notifications, enhancing communication and user involvement.
+
 ]=]
 
 --[=[
