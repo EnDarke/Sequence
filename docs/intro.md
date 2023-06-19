@@ -12,7 +12,7 @@ Wally is a quick way to get the packages you need! Wally is a package manager fo
 You can install Wally [here](https://wally.run/)
 
 #### What now?
-You can now get to configuring your Wally files! Once you make sure Wally is installed on your computer. Run `wally init` in your terminal whilst within your project directory. Open up  the file `wally.toml` to see the configuration settings for Wally. Then, under dependencies add the code `Sequence = "endarke/sequence@^0.*"`.
+You can now get to configuring your Wally files! Once you make sure Wally is installed on your computer. Run `wally init` in your terminal whilst within your project directory. Open up  the file `wally.toml` to see the configuration settings for Wally. Then, under dependencies add the code `Sequence = "endarke/sequence@*"`.
 Once you've added the package to your dependencies. You're gonna want to run `wally install` in your terminal.
 
 `wally.toml` should look something like this:
@@ -24,7 +24,7 @@ registry = "https://github.com/UpliftGames/wally-index"
 realm = "shared"
 
 [dependencies]
-Sequence = "endarke/sequence@^0.*"
+Sequence = "endarke/sequence@*"
 ```
 
 ## Source
