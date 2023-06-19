@@ -13,7 +13,7 @@
     @class Sequence
     @__index sequence
 
-    The Sequence Module is an advanced task management system that enables users to meticulously arrange tasks in a sequential order for execution. The execution of these tasks can be configured to occur either in the subsequent system resumption cycle or upon the issuance of a specific command.
+    The Sequence Module is an advanced task management system that enables users to meticulously arrange tasks in a sequential order for execution. The execution of these tasks can be configured to occur either in the Roblox engine resumption cycle or upon the issuance of the `:ForceTick()` command.
 
     This module is characterized by its versatility, making it applicable across various domains. For instance, here are some examples where this module may be applicable!
     - **Turn-Based Games:** Calculate and dictate the order of play, ensuring a structured and engaging gaming experience.
