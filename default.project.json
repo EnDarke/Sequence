@@ -1,6 +1,6 @@
 {
-    "name": "sequence",
-    "tree": {
-      "$path": "src"
-    }
+  "name": "sequence",
+  "tree": {
+    "$path": "src"
   }
+}
